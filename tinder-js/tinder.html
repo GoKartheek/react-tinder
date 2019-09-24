@@ -1,0 +1,68 @@
+<html>
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <!-- <script src="index.js"></script> -->
+</head>
+<body>
+    <div class="show-profiles-wrapper">
+        <div class="header">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        
+        <div class="profile">
+            <img 
+            src="http://www4.pictures.zimbio.com/fp/Mischa+Barton+Mischa+Barton+Set+Beautiful+9OcPb-tZwNIl.jpg" 
+            class="profile-photo" 
+            alt="photo" 
+            />
+
+            <img 
+            src="https://4.bp.blogspot.com/-9oKdH4Dl-JA/WC6DbMCasCI/AAAAAAAAFxs/0xareoK6OrET6RylnkJi7t7kM76-njT4wCLcB/s1600/Most%2BBeautiful%2BHollywood%2BActresses%2B-%2BChristine%2BEvangelista.JPG" 
+            class="profile-photo" 
+            alt="photo" 
+            />
+
+            <img 
+            src="http://www.10greatest.com/wp-content/uploads/2017/04/Robert-Downey-Jr.jpg" 
+            class="profile-photo" 
+            alt="photo" 
+            />
+
+        </div>
+        
+        <div class="footer">
+            <img src="images/close.svg" class="reject" alt="reject" onclick="rejectProfile(1)" />
+            <img src="images/star.svg" class="super-like" alt="super-like" />
+            <img src="images/hearts.svg" class="like" alt="like" onclick="likeProfile(1)" />
+        </div>
+    </div>
+    
+    <script>
+        var slideIndex = 1;
+        showSlides(slideIndex);
+        
+        function likeProfile(index) {
+            showSlides(slideIndex += index);
+        }
+        
+        function rejectProfile(index) {
+            showSlides(slideIndex += index);
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.querySelectorAll(".profile-photo");
+            // if (n > slides.length) {slideIndex = 1}    
+            // if (n < 1) {slideIndex = slides.length}
+            
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            
+            slides[slideIndex-1].style.display = "block";  
+        }
+    </script>
+</body>
+</html>
